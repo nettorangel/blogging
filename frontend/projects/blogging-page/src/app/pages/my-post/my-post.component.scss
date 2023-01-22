@@ -1,0 +1,37 @@
+.p-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__title {
+        max-width: 844.74px;
+        height: 97px;
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        color: #000000;
+    }
+
+    &__subtitle {       
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #939393; 
+    }
+}
+
+.p-content {
+    margin-top: 24px;
+    p {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 40px;
+        color: #000000;
+    }
+}
