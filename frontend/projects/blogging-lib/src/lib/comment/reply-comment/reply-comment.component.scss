@@ -1,0 +1,40 @@
+.c-reply {
+    margin-top: 10px;
+
+    &__icons {
+
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #017DB5;
+
+        .mat-button {
+            padding: 0 16px 0 0;
+
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+
+    }
+
+    &__input-icons {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+
+.mat-focused .mat-form-field-label {
+    color: #017DB5 !important;
+}
+
+.mat-form-field-ripple,
+.mat-form-field-underline {
+    background-color: #017DB5 !important;
+}
