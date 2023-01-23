@@ -1,0 +1,22 @@
+<section class="c-reply__icons">
+    <button mat-button (click)="changeReply()">
+        <mat-icon>chat_bubble_outline</mat-icon>
+        <span> Responder </span>
+    </button>
+    <button mat-button>
+        <mat-icon>share</mat-icon>
+        <span> Compartilhar </span>
+    </button>
+</section>
+
+<section class="c-reply" *ngIf="showReplyInput">    
+    <mat-form-field class="c-reply__input" appearance="fill">
+        <mat-label> Qual o seu comentário? </mat-label>
+        <textarea matInput rows="5" cols="40" placeholder="Digite seu comentário" [(ngModel)]="replyValue" ></textarea>
+    </mat-form-field>
+
+    <section class="c-reply__icons c-reply__input-icons">
+        <button mat-icon-button (click)="changeReply(false)"><mat-icon>close</mat-icon></button>
+        <button mat-icon-button (click)="setNewReply()"><mat-icon>done</mat-icon></button>  
+    </section>
+</section>

@@ -1,0 +1,14 @@
+<section class="c-container">
+    <span class="c-container__title">
+        {{ comment.author.username }} - {{ postDate | date: "d MMM y, \'às\' HH\'h\'mm " }}
+    </span>
+    <p class="c-container__content"> {{ comment.content}}</p>
+
+    <div class="c-container__reply">
+        <lib-reply-comment (newReply)="setNewReply($event)"></lib-reply-comment>
+    </div>
+
+    <div class="c-container__comments">
+        <lib-comment *ngFor="let commentChild of comment.comments" [comment]="commentChild"></lib-comment>
+    </div>
+</section>

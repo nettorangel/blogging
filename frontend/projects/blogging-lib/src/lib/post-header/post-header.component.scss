@@ -1,0 +1,32 @@
+.l-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background: #03A9F4;
+
+    &__title {
+
+        max-width: 844.74px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
+}
+
+.l-header__image {
+    width: 100%;
+    height: 493px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
