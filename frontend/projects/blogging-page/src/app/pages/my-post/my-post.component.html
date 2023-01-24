@@ -3,7 +3,7 @@
     <span class="p-header__subtitle">{{ post.subtitle }}</span>
 </section>
 
-<section class="p-user">
+<section class="p-user" (click)="openUserModal(post.author.id)">
     <img class="p-user__avatar" src="assets/avatar1.jpg" width="50" height="51"/>
     
     <div class="p-user__info">
