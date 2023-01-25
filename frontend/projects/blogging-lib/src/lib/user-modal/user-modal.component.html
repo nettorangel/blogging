@@ -1,31 +1,40 @@
+<section class="m-close">
+    <button mat-icon-button (click)="close()"><mat-icon>close</mat-icon></button>
+</section>
+
 <section class="m-header">
     <img class="m-header__avatar" height="150" width="150" [src]="'assets/avatar' + data.user.id +'.jpg'">
     <span class="m-header__username">{{data.user.username}}</span>
     <span class="m-header__member-since"> Membro desde {{data.user.memberSince | date: "d \'de\' MMM y"}}</span>
 </section>
+
 <section class="m-actions">
-    <button mat-button color="primary"> Adicionar </button>
-    <button mat-button color="primary"> Mensagem </button>
+    <button mat-button class="m-actions__primary"> Adicionar </button>
+    <button mat-button class="m-actions__primary"> Mensagem </button>
     <button mat-button color="warn"> Reportar </button>
 </section>
-<span class="m-user-posts__title"> Posts </span>
 
-<section class="m-user-posts__container">
-    <button mat-icon-button (click)="scrollLeft()">
-        <mat-icon>keyboard_arrow_left</mat-icon>
-    </button>
-    <div class="m-user-posts" #userPosts>
-        <mat-card class="m-user-posts__card" *ngFor="let post of data.user.posts">
-            <section class="m-user-posts__card-title">
-                <span *ngIf="post.title">{{ post.title.trim() }}</span>
-                <span *ngIf="post.subtitle">{{ post.subtitle.trim() }}</span>
-            </section>
-            <section class="m-user-posts__content" [innerHTML]="post.content"></section>
-        </mat-card>
+<span class="m-user-posts__title"> Amigos em comum </span>
+<section class="m-friends__container" *ngIf="data.mutualFriends.length > 0; else emptyMutalFriends">
+    <div class="m-friends" *ngFor="let friend of data.mutualFriends">
+        <img class="m-friends__avatar" height="50" width="50" [src]="'assets/avatar' + friend.id +'.jpg'">
+        <span class="m-friends__username" [title]="friend.username"> {{ friend.username }} </span>
     </div>
-    <button mat-icon-button (click)="scrollRight()">
-        <mat-icon>keyboard_arrow_right</mat-icon>
-    </button>
 </section>
 
-{{data.mutualFriends | json}}
+<ng-template #emptyMutalFriends>
+    <section class="m-friends__container">
+       <span> Não foram encontrados amigos em comum </span>
+    </section>
+</ng-template>
+
+<span class="m-user-posts__title"> Posts </span>
+<lib-carousel>
+    <mat-card class="m-user-posts__card" *ngFor="let post of data.user.posts">
+        <section class="m-user-posts__card-title">
+            <span *ngIf="post.title">{{ post.title.trim() }}</span>
+            <span *ngIf="post.subtitle">{{ post.subtitle.trim() }}</span>
+        </section>
+        <section class="m-user-posts__content" [innerHTML]="post.content"></section>
+    </mat-card>
+</lib-carousel>

@@ -6,11 +6,13 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatCardModule } from '@angular/material/card';
 import { PostHeaderComponent } from './post-header/post-header.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
+import { CarouselComponent } from './user-modal/carousel/carousel.component';
 
 @NgModule({
   declarations: [
     PostHeaderComponent,
-    UserModalComponent
+    UserModalComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

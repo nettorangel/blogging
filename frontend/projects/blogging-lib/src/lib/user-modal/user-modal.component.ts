@@ -1,5 +1,5 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from 'projects/blogging-page/src/app/models/user.model';
 
 @Component({
@@ -8,21 +8,15 @@ import { User } from 'projects/blogging-page/src/app/models/user.model';
   styleUrls: ['./user-modal.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class UserModalComponent implements OnInit {
-  @ViewChild('userPosts') userPosts!: ElementRef;
+export class UserModalComponent {
 
   constructor(  
     public dialog: MatDialog,
+    public dialogRef: MatDialogRef<UserModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { user : User , mutualFriends: User[]},
   ) { }
 
-  ngOnInit(): void {  }
-  
-  scrollLeft(){
-    this.userPosts.nativeElement.scrollLeft -= 150;
-  }
-
-  scrollRight(){
-    this.userPosts.nativeElement.scrollLeft += 150;
+  close(): void {
+    this.dialogRef.close();
   }
 }

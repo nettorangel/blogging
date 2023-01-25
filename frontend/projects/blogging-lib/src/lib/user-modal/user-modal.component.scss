@@ -1,3 +1,10 @@
+.m-close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .m-header {
     display: flex;
     flex-direction: column;
@@ -23,27 +30,43 @@
     }
 }
 
+.m-friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85px;
+
+    &__container {
+        margin: 16px 0 40px;
+        padding: 0 10px;
+    }
+
+    &__avatar {
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+
+    &__username {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 85px;
+    }
+}
+
 .m-actions {
     width: 100%;
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 12px;
+    margin: 16px 0;
+
+    &__primary {
+        color: #017DB5;
+    }
 }
 
 .m-user-posts {
-    display: flex;
-    white-space: nowrap;
-    overflow-x: hidden;
-    height: auto;
-    gap: 20px;
-    padding: 10px;
-
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
     &__title {
         font-size: 16px;
