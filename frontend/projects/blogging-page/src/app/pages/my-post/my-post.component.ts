@@ -50,14 +50,14 @@ export class MyPostComponent implements OnInit {
     this.postsService.getUser(id)
       .subscribe(res => {
         const mutualFriends =
-        res.id === this.user.id ? [] :
-          this.getMutualFriends(res, this.user);
+          res.id === this.user.id ? [] :
+            this.getMutualFriends(res, this.user);
         this.userModalService.getUserModal(res, mutualFriends);
       });
   }
 
   getMutualFriends(user: User, myUser: User): User[] {
     const mutualFriend = user.friendIds.filter(userId => myUser.friendIds.includes(userId));
-    return this.allUsers.filter(user => mutualFriend.includes(user.id))
+    return this.allUsers.filter(user => mutualFriend.includes(user.id));
   }
 }
