@@ -1,0 +1,19 @@
+.carousel {
+    display: flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 16px 0;
+    }
+}

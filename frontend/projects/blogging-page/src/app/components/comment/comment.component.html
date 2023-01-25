@@ -1,5 +1,5 @@
 <section class="c-container">
-    <span class="c-container__title">
+    <span class="c-container__title" (click)="openUserModal(comment.author.id)" >
         {{ comment.author.username }} - {{ postDate | date: "d MMM y, \'às\' HH\'h\'mm " }}
     </span>
     <p class="c-container__content"> {{ comment.content}}</p>

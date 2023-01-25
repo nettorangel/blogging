@@ -1,28 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommentComponent } from './comment/comment.component';
-import { ReplyCommentComponent } from './comment/reply-comment/reply-comment.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatCardModule } from '@angular/material/card';
 import { PostHeaderComponent } from './post-header/post-header.component';
+import { UserModalComponent } from './user-modal/user-modal.component';
+import { CarouselComponent } from './user-modal/carousel/carousel.component';
 
 @NgModule({
   declarations: [
-    CommentComponent,
-    ReplyCommentComponent,
-    PostHeaderComponent
+    PostHeaderComponent,
+    UserModalComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule,
-    FormsModule,
+    MatDialogModule,
+    MatCardModule
   ],
   exports: [
-    CommentComponent,
     PostHeaderComponent
   ]
 })
