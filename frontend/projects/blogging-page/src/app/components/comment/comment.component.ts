@@ -56,7 +56,7 @@ export class CommentComponent implements OnInit {
       });
   }
 
-  getMutualFriends(user: User, myUser: User): User[] {
+  public getMutualFriends(user: User, myUser: User): User[] {
     const mutualFriend = user.friendIds.filter(userId => myUser.friendIds.includes(userId));
     return this.allUsers.filter(user => mutualFriend.includes(user.id))
   }

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserModalComponent } from './user-modal.component';
 
 describe('UserModalComponent', () => {
@@ -8,9 +9,14 @@ describe('UserModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserModalComponent ]
+      imports: [MatDialogModule, BrowserAnimationsModule],
+      declarations: [UserModalComponent],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: [] },
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(UserModalComponent);
     component = fixture.componentInstance;

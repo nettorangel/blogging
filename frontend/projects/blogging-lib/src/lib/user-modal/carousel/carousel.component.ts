@@ -6,7 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  @ViewChild('userPosts') userPosts!: ElementRef;
+  @ViewChild('carousel') carousel!: ElementRef;
 
   constructor() { }
 
@@ -14,10 +14,10 @@ export class CarouselComponent implements OnInit {
   }
 
   scrollLeft(){
-    this.userPosts.nativeElement.scrollLeft -= 150;
+    this.carousel.nativeElement.scrollLeft -= 150;
   }
 
   scrollRight(){
-    this.userPosts.nativeElement.scrollLeft += 150;
+    this.carousel.nativeElement.scrollLeft += 150;
   }
 }

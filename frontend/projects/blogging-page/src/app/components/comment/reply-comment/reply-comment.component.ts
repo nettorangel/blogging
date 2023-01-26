@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-reply-comment',
@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@ang
   styleUrls: ['./reply-comment.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ReplyCommentComponent implements OnInit {
+export class ReplyCommentComponent {
   @Output() newReply = new EventEmitter<string>();
 
   public showReplyInput: boolean = false;
@@ -14,7 +14,6 @@ export class ReplyCommentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
 
   public changeReply(status?:boolean): void {
     this.replyValue = "";
