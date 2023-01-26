@@ -1,0 +1,14 @@
+<section class="c-container">
+    <span class="c-container__title" (click)="openUserModal(comment.author.id)" *ngIf="comment?.author">
+        {{ comment.author.username }} - {{ postDate | date: "d MMM y, \'às\' HH\'h\'mm " }}
+    </span>
+    <p class="c-container__content" *ngIf="comment?.content"> {{ comment.content}}</p>
+
+    <div class="c-container__reply">
+        <lib-reply-comment (newReply)="setNewReply($event)"></lib-reply-comment>
+    </div>
+
+    <div class="c-container__comments" *ngIf="comment?.comments">
+        <lib-comment *ngFor="let commentChild of comment.comments" [comment]="commentChild"></lib-comment>
+    </div>
+</section>

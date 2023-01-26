@@ -3,4 +3,21 @@
     <span class="p-header__subtitle">{{ post.subtitle }}</span>
 </section>
 
+<section class="p-user" (click)="openUserModal(post.author.id)">
+    <img class="p-user__avatar" src="assets/avatar1.jpg" width="50" height="51"/>
+    
+    <div class="p-user__info">
+        <span> {{ post.author.username }} </span>
+        <span> {{ post.timestamp | date: "d \'de\' MMM y"}} </span>
+    </div>
+
+</section>
+
 <section class="p-content" [innerHTML]="post.content"></section>
+
+<section class="p-comments">
+    <span class="p-comments__title"> Comentários </span>
+    <div class="p-comments__content">
+        <lib-comment *ngFor="let comment of commentsTree" [comment]="comment"></lib-comment>
+    </div>
+</section>
