@@ -27,8 +27,8 @@ export class CommentComponent implements OnInit {
     this.postsService.getAllUsers().subscribe(res => this.allUsers = res);
   }
 
-  private formatDate() {
-    return new Date(`${this.comment.timestamp}`).toUTCString() + '-0300';
+  private formatDate(): string {
+    return this.comment?.timestamp ? new Date(`${this.comment.timestamp}`).toUTCString() + '-0300' : '';
   }
 
   public setNewReply(reply: string) {
@@ -56,7 +56,7 @@ export class CommentComponent implements OnInit {
       });
   }
 
-  getMutualFriends(user: User, myUser: User): User[] {
+  public getMutualFriends(user: User, myUser: User): User[] {
     const mutualFriend = user.friendIds.filter(userId => myUser.friendIds.includes(userId));
     return this.allUsers.filter(user => mutualFriend.includes(user.id))
   }

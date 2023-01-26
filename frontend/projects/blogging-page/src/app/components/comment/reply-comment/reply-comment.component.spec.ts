@@ -8,9 +8,9 @@ describe('ReplyCommentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReplyCommentComponent ]
+      declarations: [ReplyCommentComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ReplyCommentComponent);
     component = fixture.componentInstance;
@@ -19,5 +19,26 @@ describe('ReplyCommentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Should emit newReply event when setNewReply has been called', () => {
+    spyOn(component.newReply, 'emit');
+    component.replyValue = "New reply example";
+    component.setNewReply()
+    expect(component.newReply.emit).toHaveBeenCalled();
+  });
+
+  it('Should emit newReply event when setNewReply has been called', () => {
+    spyOn(component.newReply, 'emit');
+    component.replyValue = "New reply example";
+    component.setNewReply()
+    expect(component.newReply.emit).toHaveBeenCalled();
+  });
+
+  it('Should change showReplyInput and replyValue is empty when changeReply has been called', () => {
+    component.showReplyInput = true;
+    component.changeReply();
+    expect(component.showReplyInput).toBe(false);
+    expect(component.replyValue).toBe('');
   });
 });
